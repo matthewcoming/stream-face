@@ -1,0 +1,30 @@
+{
+  "name": "stream-face",
+  "version": "1.0.0",
+  "description": "",
+  "main": "capture.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewcoming/stream-face.git"
+  },
+  "keywords": [
+    "twitch",
+    "stream",
+    "m3u8",
+    "ocv",
+    "opencv",
+    "ffmpeg"
+  ],
+  "author": "Matthew Coming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewcoming/stream-face/issues"
+  },
+  "homepage": "https://github.com/matthewcoming/stream-face#readme",
+  "dependencies": {
+    "twitch-m3u8": "https://github.com/matthewcoming/twitch-m3u8.git"
+  }
+}
