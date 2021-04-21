@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ffmpeg -protocol_whitelist "file,http,https,tcp,tls" -i Northernlion.m3u8 -c copy NorthernLion.mkv
