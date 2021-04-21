@@ -69,7 +69,8 @@ def write_image_func():
         image = np.uint8(buffer).reshape(height, width, 3)
         # Find face, draw rectangle
         grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        rects = detector.detectMultiScale(grayscale, scaleFactor=1, minNeighbors=10, minSize=(10, 10))
+        # rects = detector.detectMultiScale(grayscale, scaleFactor=1, minNeighbors=5, minSize=(30, 30))
+        rects = detector.detectMultiScale(grayscale, minSize=(30, 30))
         for (i, (x, y, w, h)) in enumerate(rects):
 	        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 	        cv2.putText(image, f"{sys.argv[1]}", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
