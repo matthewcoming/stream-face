@@ -6,7 +6,6 @@ import time
 
 import ffmpeg
 import cv2
-import ffmpeg
 import numpy as np
 from PIL import Image
 
@@ -31,7 +30,12 @@ stream_url = get_stream_url_proc.stdout.read()
 
 print('Using stream file: ', stream_url)
 
-probe = ffmpeg.probe(stream_url)
+try:
+    probe = ffmpeg.probe(stream_url)
+except ffmpeg.Error as ex:
+    print(ex.stderr)
+    exit
+
 gen = (stream for stream in probe['streams'] if stream['codec_type'] == 'video')
 # _ = next(gen)
 # _ = next(gen)
